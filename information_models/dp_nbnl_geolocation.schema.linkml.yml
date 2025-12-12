@@ -36,7 +36,7 @@ classes:
       PowerSystemResources:
         description: All power system resources at this location.
         slot_uri: cim:Location.PowerSystemResources
-        range: PowerSystemResource
+        range: curie
         required: true
         multivalued: true
     class_uri: cim:Location
@@ -69,14 +69,6 @@ classes:
         required: true
         multivalued: false
     class_uri: cim:StreetDetail
-  PowerSystemResource:
-    description: A power system resource (PSR) can be an item of equipment such as
-      a switch, an equipment container containing many individual items of equipment
-      such as a substation, or an organisational entity such as sub-control area.
-      Power system resources can have measurements associated.
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
-    is_a: IdentifiedObject
-    class_uri: cim:PowerSystemResource
   IdentifiedObject:
     description: This is a root class to provide common identification for all classes
       needing identification and naming attributes.
@@ -91,6 +83,7 @@ classes:
           \ attributes that identify CIM object elements."
         slot_uri: cim:IdentifiedObject.mRID
         range: string
+        identifier: true
         required: true
         multivalued: false
       name:
