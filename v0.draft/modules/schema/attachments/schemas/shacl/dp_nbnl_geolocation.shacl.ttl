@@ -6,7 +6,7 @@
 cim:IdentifiedObject a sh:NodeShape ;
     sh:closed false ;
     sh:description "This is a root class to provide common identification for all classes needing identification and naming attributes." ;
-    sh:ignoredProperties ( rdf:type cim:Location.PowerSystemResources cim:Location.mainAddress ) ;
+    sh:ignoredProperties ( cim:Location.PowerSystemResources rdf:type cim:Location.mainAddress ) ;
     sh:property [ sh:datatype xsd:string ;
             sh:description """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.""" ;
@@ -29,13 +29,7 @@ cim:Location a sh:NodeShape ;
     sh:description """The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.\r
 """ ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class cim:PowerSystemResource ;
-            sh:description "All power system resources at this location." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:order 1 ;
-            sh:path cim:Location.PowerSystemResources ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.""" ;
             sh:maxCount 1 ;
@@ -50,6 +44,12 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
             sh:nodeKind sh:Literal ;
             sh:order 3 ;
             sh:path cim:IdentifiedObject.name ],
+        [ sh:datatype xsd:string ;
+            sh:description "All power system resources at this location." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path cim:Location.PowerSystemResources ],
         [ sh:class cim:StreetAddress ;
             sh:description "Main address of the location." ;
             sh:maxCount 1 ;
@@ -58,27 +58,6 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
             sh:order 0 ;
             sh:path cim:Location.mainAddress ] ;
     sh:targetClass cim:Location .
-
-cim:PowerSystemResource a sh:NodeShape ;
-    sh:closed false ;
-    sh:description "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
-For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.""" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path cim:IdentifiedObject.mRID ],
-        [ sh:datatype xsd:string ;
-            sh:description """The name is any free human readable and possibly non unique text naming the object.\r
-""" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path cim:IdentifiedObject.name ] ;
-    sh:targetClass cim:PowerSystemResource .
 
 cim:StreetAddress a sh:NodeShape ;
     sh:closed false ;

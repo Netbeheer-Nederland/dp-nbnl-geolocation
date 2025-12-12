@@ -9,10 +9,6 @@
 
 
 
-*** xref::class/PowerSystemResource.adoc[PowerSystemResource]
-
-
-
 *** xref::class/StreetAddress.adoc[StreetAddress]
 
 

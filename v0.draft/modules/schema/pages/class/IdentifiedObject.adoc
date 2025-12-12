@@ -24,7 +24,6 @@
 == Class hierarchy
 * *`IdentifiedObject`*
  ** xref::class/Location.adoc[`Location`]
- ** xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 
 
 == Slots

@@ -13,9 +13,6 @@
 | xref::class/Location.adoc[`Location`]
 | +++The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.+++
 
-| xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
-| +++A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.+++
-
 | xref::class/StreetAddress.adoc[`StreetAddress`]
 | +++General purpose street and postal address information.+++
 
