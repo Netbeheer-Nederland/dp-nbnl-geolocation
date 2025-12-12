@@ -1,0 +1,6 @@
+name: dp-nbnl-geolocation
+version: v0.draft
+title: NBNL GeoLocation (GL)
+nav:
+- modules/ROOT/nav.adoc
+- modules/schema/nav.adoc
